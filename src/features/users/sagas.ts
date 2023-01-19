@@ -32,7 +32,7 @@ export function* requestAddUser({payload}: ActionType<typeof actions.addUser.req
         // const users: User = yield call(addUser, payload);
         const userList: User[] = yield select(getUserListSelector) 
        
-        yield put(actions.addUser.success({...payload, id: userList.at(-1)?.id || 0 +1}))
+        yield put(actions.addUser.success({...payload, id: (userList.at(-1)?.id || 0) +1}))
     } catch (e) {
         yield put(actions.getUsersList.failure(''));
     }

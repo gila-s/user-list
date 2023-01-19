@@ -40,7 +40,7 @@ export const UserList: React.FC<Props> = ({ searchValue }) => {
           {userList &&
             getFilterUserList().map((user) => (
 
-              <tr onClick={() => setEditshow({...user})} key={user.id}>
+              <tr role="button" onClick={() => setEditshow({...user})} key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
                 <td>{user.phone}</td>
